@@ -7,7 +7,7 @@ import com.velocitypowered.api.event.proxy.ProxyInitializeEvent;
 import com.velocitypowered.api.plugin.Dependency;
 import com.velocitypowered.api.plugin.Plugin;
 import com.velocitypowered.api.plugin.annotation.DataDirectory;
-import com.viaversion.viaversion.sponge.util.LoggerWrapper;
+//import com.viaversion.viaversion.sponge.util.LoggerWrapper; // Solar
 import de.gerrygames.viarewind.api.ViaRewindConfigImpl;
 import de.gerrygames.viarewind.api.ViaRewindPlatform;
 import de.gerrygames.viarewind.velocity.VersionInfo;
@@ -37,7 +37,7 @@ public class VelocityPlugin implements ViaRewindPlatform {
 	@Subscribe(order = PostOrder.LATE)
 	public void onProxyStart(ProxyInitializeEvent e) {
 		// Setup Logger
-		this.logger = new LoggerWrapper(loggerSlf4j);
+		this.logger = Logger.getLogger(getClass().getName()); // Solar
 		// Init!
 		ViaRewindConfigImpl conf = new ViaRewindConfigImpl(configDir.resolve("config.yml").toFile());
 		conf.reloadConfig();

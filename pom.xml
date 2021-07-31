@@ -4,7 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.viaversion</groupId>
+<!-- Solar start -->
+    <parent>
+        <groupId>gg.solarmc</groupId>
+        <artifactId>solar-parent</artifactId>
+        <version>1.1.1</version>
+    </parent>
+<!-- Solar end -->
+    <groupId>gg.solarmc.viaversion</groupId> <!-- Solar -->
     <artifactId>viarewind-parent</artifactId>
     <version>2.0.2-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -12,9 +19,11 @@
     <modules>
         <module>core</module>
         <module>bukkit</module>
+<!-- Solar start
         <module>bungee</module>
         <module>fabric</module>
         <module>sponge</module>
+Solar end -->
         <module>velocity</module>
         <module>all</module>
     </modules>
@@ -28,7 +37,30 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
+    <!-- Solar start -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>enforce-organization-repositories</id>
+                        <phase>none</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <!-- Solar end -->
+
     <repositories>
+<!-- Solar start -->
+        <repository>
+            <id>solar-repo</id>
+            <url>https://repo.solarmc.gg/mvn</url>
+        </repository>
+<!-- Solar end -->
         <repository>
             <id>viaversion-repo</id>
             <url>https://repo.viaversion.com</url>
@@ -37,12 +69,14 @@
 
     <dependencies>
         <!-- ViaVersion -->
+<!-- Solar start -->
         <dependency>
-            <groupId>com.viaversion</groupId>
-            <artifactId>viaversion</artifactId>
-            <version>4.0.2-SNAPSHOT</version>
+            <groupId>gg.solarmc.viaversion</groupId>
+            <artifactId>viaversion-common</artifactId>
+            <version>4.0.3-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
+<!-- Solar end -->
     </dependencies>
 
 </project>

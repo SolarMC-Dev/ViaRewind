@@ -1,8 +1,8 @@
 package de.gerrygames.viarewind.utils;
 
-import com.viaversion.viaversion.libs.gson.JsonElement;
-import com.viaversion.viaversion.libs.kyori.adventure.text.serializer.gson.GsonComponentSerializer;
-import com.viaversion.viaversion.libs.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
+import com.google.gson.JsonElement;
+import net.kyori.adventure.text.serializer.gson.GsonComponentSerializer;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import com.viaversion.viaversion.protocols.protocol1_13to1_12_2.ChatRewriter;
 import de.gerrygames.viarewind.ViaRewind;
 

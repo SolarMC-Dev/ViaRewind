@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.viaversion</groupId>
+        <groupId>gg.solarmc.viaversion</groupId> <!-- Solar -->
         <artifactId>viarewind-parent</artifactId>
         <version>2.0.2-SNAPSHOT</version>
     </parent>
@@ -41,6 +41,7 @@
         </plugins>
     </build>
 
+<!-- Solar start
     <repositories>
         <repository>
             <id>velocity-maven-repo</id>
@@ -48,20 +49,23 @@
             <url>https://nexus.velocitypowered.com/repository/maven-public/</url>
         </repository>
     </repositories>
+Solar end -->
 
     <dependencies>
         <!-- Core Module -->
         <dependency>
-            <groupId>com.viaversion</groupId>
+            <groupId>gg.solarmc.viaversion</groupId>
             <artifactId>viarewind-core</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
 
         <!-- Velocity API -->
         <dependency>
-            <groupId>com.velocitypowered</groupId>
+            <!-- Solar start -->
+            <groupId>gg.solarmc.velocity</groupId>
             <artifactId>velocity-api</artifactId>
-            <version>1.1.5</version>
+            <version>3.0.2</version>
+            <!-- Solar end -->
             <scope>provided</scope>
         </dependency>
     </dependencies>
