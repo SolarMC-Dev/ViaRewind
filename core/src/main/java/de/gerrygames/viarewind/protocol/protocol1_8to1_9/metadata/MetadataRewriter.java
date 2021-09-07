@@ -96,11 +96,16 @@ public class MetadataRewriter {
 					}
 
 				} else {
+		// Solar start - stop using exceptions for control flow
+					/* Skip directly to the original logic in the catch block
 					throw new Exception("Could not find valid metadata");
+					*/ list.remove(entry);
 				}
+			} finally {} /*
 			} catch (Exception e) {
 				list.remove(entry);
 			}
+		*/ // Solar end
 		}
 	}
 
